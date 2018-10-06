@@ -105,4 +105,18 @@ cm = confusion_matrix(y_test, y_pred)
 4) assign new data point into the most of the neighbors belongs to
 Euclidean Distance: - Sqrt((x2-x1)^2 + (y2-y1)^2)
 
+### 14 Support Vector Machine (SVM) classification
+- Line is build by a principle called Maximum Margin = sum of Xn and Yn has to be maximized by this line seperation where Xn and Yn are called support vectors.
+- line in the middle is called = Maximum Margin Hyper Plane(Maximum margin classifier)
+- why SVM is imp?
+  - they look for support vectors which are for eg - cats that looks like dogs and dogs that looks like cats in cat dog classification . THis model will be built on these support vectors
+
+### 15 Kernel SVM for non linear data
+- with the help of a mapping function, data will be transffered into higher dimensions
+- thus we can draw hyperplane in that higher dimensions then classify and then bring the data back to original dimensions
+- problem = mapping to higher dimension can be highly compute-intensive, so we will do a kernel-trick
+Kernel-Trick: use anyof the kernels if the point is on kernel then its one class and others are in another class
+- Gaussian or Radial Basis Functional(RBF) kernel:
+- Sigmoid kernel
+- polynomial kernel
 
