@@ -169,5 +169,14 @@ likelihood = no of similar observations / total number of observations = 4/30
 => what happens when we have more than 2 classes
 compare which one has greater probability
 ### 17 Decision Trees
-It makes splits on the data that creates branches , the split is based on entropy (or some other algo)
+It makes splits on the data that creates branches , the split is based on entropy (or Gini or maximum entropy)
 They combine with Random Forests, Gradient Boosting etc..
+core problem is - it does overfitting most of the time in a complex mixed data set
+
+### 18 Random Forests
+Ensemble Learning - using more machine learning algorithms to create a new algorithm
+- 1) pick at random K data points from the training set
+- 2) Build the Decision tree associated to these K data points
+- 3) choose number 'Ntree' of trees you want to build and repeat step1 & 2
+- 4) For a new data point, make each one of your Ntree trees predict the category to which the data point belongs and assign the new data point to category that wins.
+Imagine 500 decision trees
