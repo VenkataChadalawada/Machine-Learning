@@ -168,3 +168,6 @@ Independence , it assumes age and salary are independent
 likelihood = no of similar observations / total number of observations = 4/30
 => what happens when we have more than 2 classes
 compare which one has greater probability
+### 17 Decision Trees
+It makes splits on the data that creates branches , the split is based on entropy (or some other algo)
+They combine with Random Forests, Gradient Boosting etc..
