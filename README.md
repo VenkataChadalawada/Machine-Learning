@@ -98,4 +98,11 @@ cm = confusion_matrix(y_test, y_pred)
 # Visualizing the training set results
 
 ```
+### 13 K-Nearest Neighbors KNN classification
+1) choose the number K of neighbors
+2) Take the K nearest neighbors of the new data point using Euclidian distance (few others are Manhattan distance etc)
+3) Among these K neighbors count the number of data points in each category
+4) assign new data point into the most of the neighbors belongs to
+Euclidean Distance: - Sqrt((x2-x1)^2 + (y2-y1)^2)
+
 
