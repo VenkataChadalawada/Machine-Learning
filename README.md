@@ -27,3 +27,19 @@ Adjusted R2 :- when we add new columns we wont be clearly knowing with R^2 as it
 - adj Rsquared = 1 - (1-R^2) (n-1/n-p-1)
 - p is number of regressors , n - sample size.
 - This adj R^2 penalizes if we add more independent variables
+- Its the indicator when we do backward elimination. The moment it falls and we see not a real big deal in pvalue ~=0.05 and lesser we can take choice
+
+Interpreting coefficients
+
+Regression Model    |    Pros    |    Cons
+---------------------------------------------------
+Linear Regression   | Works on any size of dataset, gives informations about relevance of features | The Linear Regression Assumptions
+
+Polynomial Regression | Works on any size of dataset, works verywell on non linear problems | Need to choose the right polynomial degree for a good bias/variance tradeoff
+
+SVR     |  Easily adaptable, works very well on non linear problems, not biased by outliers | Compulsory to apply feature scaling, not
+well known, more difficult to understand
+
+Decision Tree Regression |  Interpretability, no need for feature scaling, works on both linear / nonlinear problems | Poor results on too small datasets, overfitting can easily occur
+
+Random Forest Regression | Powerful and accurate, good performanceon many problems, including non linear | No interpretability, overfitting can easily occur, need to choose the number of trees
