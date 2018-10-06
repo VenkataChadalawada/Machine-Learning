@@ -43,3 +43,59 @@ well known, more difficult to understand
 Decision Tree Regression |  Interpretability, no need for feature scaling, works on both linear / nonlinear problems | Poor results on too small datasets, overfitting can easily occur
 
 Random Forest Regression | Powerful and accurate, good performanceon many problems, including non linear | No interpretability, overfitting can easily occur, need to choose the number of trees
+
+##### How do I know which model to choose for my problem ?
+
+First, you need to figure out whether your problem is linear or non linear. You will learn how to do that in Part 10 - Model Selection. Then:
+
+If your problem is linear, you should go for Simple Linear Regression if you only have one feature, and Multiple Linear Regression if you have several features.
+
+If your problem is non linear, you should go for Polynomial Regression, SVR, Decision Tree or Random Forest. Then which one should you choose among these four ? That you will learn in Part 10 - Model Selection. The method consists of using a very relevant technique that evaluates your models performance, called k-Fold Cross Validation, and then picking the model that shows the best results. Feel free to jump directly to Part 10 if you already want to learn how to do that.
+
+##### How can I improve each of these models ?
+In Part 10 - Model Selection, you will find the second section dedicated to Parameter Tuning, that will allow you to improve the performance of your models, by tuning them. You probably already noticed that each model is composed of two types of parameters:
+
+the parameters that are learnt, for example the coefficients in Linear Regression,
+the hyperparameters.
+The hyperparameters are the parameters that are not learnt and that are fixed values inside the model equations. For example, the regularization parameter lambda or the penalty parameter C are hyperparameters. So far we used the default value of these hyperparameters, and we haven't searched for their optimal value so that your model reaches even higher performance. Finding their optimal value is exactly what Parameter Tuning is about.
+
+### 11 Classification
+#### Logistic Regression
+ln(p/1-p) =  
+Exercise:
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+dataset = pd.read_csv('social_network_ads.csv')
+X= dataset.iloc[:,[2,3]].values
+y = dataset.iloc[:,4].values
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train,y_test = train_test_split(X,y,test_size=0.2, random_state=0)
+
+# Feature scaling
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
+
+# Fitting Logistic Regression to the training set
+from sklearn.linear_model import LogisticRegression
+classifier = LogisticRegression(random_state=0)
+classifier.fit(X_train, y_train)
+
+# predict the test set results
+y_pred = classifier.predict(X_test)
+
+# evaluating using confusion matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+## leftupper+rightbottom tells those many percent is explained by model
+## similarly opposite tells how many aren't
+
+# Visualizing the training set results
+
+```
+
