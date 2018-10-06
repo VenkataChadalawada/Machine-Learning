@@ -120,3 +120,51 @@ Kernel-Trick: use anyof the kernels if the point is on kernel then its one class
 - Sigmoid kernel
 - polynomial kernel
 
+### 16 Bayes Theorem
+P(A|B) = (P(B|A)* P(A)) / P(B)
+Machine1: 30 wrenches/hr
+Machine2: 20 wrenches/hr
+out of all produced parts:
+we can see that 1% are defective
+out of all defective parts:
+we can see that 50% came from machine1 and 50% came from machine 2
+
+Q) what is the probability that a part produced by Machine2 is defective?
+P(M1) = 30/50
+P(M2) = 20/50
+P(Defect)=1%
+P(M1|defect) =50%
+P(M2|defect) = 50%
+
+P(defect|M2) = P(M2|defect)P(Defect) / P(M2) = (0.5 * 0.01) / 0.4 = 1.25%
+also
+P(defect|M1) = P(M1|defect)P(Defect) / P(M1) = 0.5 * 0.01 / 0.6 = 
+how Naive Bayes applies in classification?
+Lets say you have a plot with people walks and people drives to work given their age & salary
+lets say anew data point came in now we need Naive bayes to answer which class it could go int
+P(Walks|X) = P(X|Walks) * P(walks) / P(X)
+prob of walks given a new person = prob person given walks * prob of total walks / probability of x
+P(Drives | x) = P(X|Drives) * P(Drives) / P(X)
+
+now compare P(walks|x) vs P(drives|x)
+
+P(walks) = Num of walks / total observation = 10/30 = 0.33
+P(x)  = Draw a circle arround the new point with some radius anyone falls =
+no of similar observations/ total number of observations = 4/30
+P(x|walks) = no of similar observations among those who walk/total number of walkers
+= 3/10
+P(walks|x) = (3/10 * 10/30) / (4/30) = 0.75
+similarly we will find P(drives | x) = 0.25 
+p(drives) = no of drives/total num ofobservations = 20/30
+p(x) = 4/30 same as aboveP(x)
+P(x|drives) = 1/20
+P(drives|x) = P(x|drives)
+now 0.75 vs 0.25 => 0.75 so It will be "walks" to work
+
+
+=> Why Naive?
+Independence , it assumes age and salary are independent
+=> P(x)
+likelihood = no of similar observations / total number of observations = 4/30
+=> what happens when we have more than 2 classes
+compare which one has greater probability
