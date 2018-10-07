@@ -313,5 +313,41 @@ dissimilarity threshold - helps to cut down the vertical axis
 recommended take largest distance and consider threshold there
 
 
+### 23) ASSOCIATIVE RULE LEARNING
+People who bought also bought ... That is what Association Rule Learning will help us figure out!
 
+In this part, you will understand and learn how to implement the following Association Rule Learning models:
+- Apriori
+- Eclat
 
+#### Apriori
+Apriori has three parts to it
+- support
+- confidance
+- lift
+##### support
+examples 
+- movie recommendation support(M) = #user watchlists containing Movie / #user watchlists
+lets say support for a movie ExMachina = num of perople watched exmachina / total number of people; say for ex = 10/100 = 10%
+- market basket optimization(I) = #transactions containing Item / #transactions
+
+#### confidance
+people who have seen interstellar also would see ExMachina
+confidance(M1->M2) = #user watchlists containing M1 and M2 / #user watchlists containing M1
+
+#### Lift
+confidance(M1->M2) / Support(M)
+
+#### Algorithm
+- step1 set a minimum support and confidence
+- step2 take all the subsets in transactions having higher support than minimum support
+- step3 take all the rules of these subsets having higher confidance than minimum confidence
+- step4 sort the rules by decreasing lift
+
+#### Eclat Model
+in this model we only have 'Support'
+- eclat support => support(M) = #user watchlists containing M /  # user watchlists; here M is a set of 2 or more movies
+##### Algorithm
+- step 1: set a minimum support
+- step 2: Take all the transactions having higher support than minimum support
+- step 3: sort these subsets by decreasing support
