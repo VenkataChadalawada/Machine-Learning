@@ -180,3 +180,98 @@ Ensemble Learning - using more machine learning algorithms to create a new algor
 - 3) choose number 'Ntree' of trees you want to build and repeat step1 & 2
 - 4) For a new data point, make each one of your Ntree trees predict the category to which the data point belongs and assign the new data point to category that wins.
 Imagine 500 decision trees
+
+### 19 Evaluating classification models
+#### flasepositives & false negatives
+FalsePositive - Type 1 error - we predicted a positive but it was false
+False Negative - Type 2 error - we predicted a negative but it effected
+
+Flase positive or type 1 error is kind of warning - you said earthquake gonna come but it didnt
+False Negative or type 2 error is kind of dangerous - you said it wont occur but it did
+
+#### confusion matrix
+matrix between actual vs predicted
+accuracy rate  = correct/total
+error rate = wrong/total
+
+#### accuracy paradox 
+
+#### cummilative accuracy profile CAP
+how much gain additional gain we get
+we can plot diff machine learning models to compare
+AR = ar/ap , closer to 1 means better the model
+look at the 50th percentile x% percentage
+x<60% rubbish
+60%<x<70% poor
+70% <x<80%  good
+80 <x< 90 very good
+90 <x< 100 too good ?? over fitting
+
+
+Classification Model     |     Pros    |     Cons
+Logistic Regression Probabilistic approach, gives informations
+about statistical significance of features The Logistic Regression Assumptions
+K-NN Simple to understand, fast and efficient Need to choose the number of neighbours k
+SVM Performant, not biased by outliers,
+not sensitive to overfitting
+Not appropriate for non linear problems, not
+the best choice for large number of features
+Kernel SVM High performance on nonlinear problems, not
+biased by outliers, not sensitive to overfitting
+Not the best choice for large number of
+features, more complex
+Naive Bayes Efficient, not biased by outliers, works on
+nonlinear problems, probabilistic approach
+Based on the assumption that features
+have same statistical relevance
+Decision Tree Classification Interpretability, no need for feature scaling,
+works on both linear / nonlinear problems
+Poor results on too small datasets,
+overfitting can easily occur
+Random Forest Classification Powerful and accurate, good performance on
+many problems, including non linear
+No interpretability, overfitting can easily
+occur, need to choose the number of trees
+
+
+1. What are the pros and cons of each model ?
+
+Please find here a cheat-sheet that gives you all the pros and the cons of each classification model.
+
+2. How do I know which model to choose for my problem ?
+
+Same as for regression models, you first need to figure out whether your problem is linear or non linear. You will learn how to do that in Part 10 - Model Selection. Then:
+
+If your problem is linear, you should go for Logistic Regression or SVM.
+
+If your problem is non linear, you should go for K-NN, Naive Bayes, Decision Tree or Random Forest.
+
+Then which one should you choose in each case ? You will learn that in Part 10 - Model Selection with k-Fold Cross Validation.
+
+Then from a business point of view, you would rather use:
+
+- Logistic Regression or Naive Bayes when you want to rank your predictions by their probability. For example if you want to rank your customers from the highest probability that they buy a certain product, to the lowest probability. Eventually that allows you to target your marketing campaigns. And of course for this type of business problem, you should use Logistic Regression if your problem is linear, and Naive Bayes if your problem is non linear.
+
+- SVM when you want to predict to which segment your customers belong to. Segments can be any kind of segments, for example some market segments you identified earlier with clustering.
+
+- Decision Tree when you want to have clear interpretation of your model results,
+
+- Random Forest when you are just looking for high performance with less need for interpretation. 
+
+3. How can I improve each of these models ?
+
+Same answer as in Part 2: 
+
+In Part 10 - Model Selection, you will find the second section dedicated to Parameter Tuning, that will allow you to improve the performance of your models, by tuning them. You probably already noticed that each model is composed of two types of parameters:
+
+the parameters that are learnt, for example the coefficients in Linear Regression,
+the hyperparameters.
+The hyperparameters are the parameters that are not learnt and that are fixed values inside the model equations. For example, the regularization parameter lambda or the penalty parameter C are hyperparameters. So far we used the default value of these hyperparameters, and we haven't searched for their optimal value so that your model reaches even higher performance. Finding their optimal value is exactly what Parameter Tuning is about. So for those of you already interested in improving your model performance and doing some parameter tuning, feel free to jump directly to Part 10 - Model Selection
+
+## CLUSTERING
+Clustering is similar to classification, but the basis is different. In Clustering you don’t know what you are looking for, and you are trying to identify some segments or clusters in your data. When you use clustering algorithms on your dataset, unexpected things can suddenly pop up like structures, clusters and groupings you would have never thought of otherwise.
+
+In this part, you will understand and learn how to implement the following Machine Learning Clustering models:
+
+K-Means Clustering
+Hierarchical Clustering
