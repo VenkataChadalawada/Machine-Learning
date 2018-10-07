@@ -277,3 +277,41 @@ In this part, you will understand and learn how to implement the following Machi
 - Hierarchical Clustering
 
 ### 21) K-Means clustering
+step1 - choose the number k of clusters
+step2 - select random k points, the centroids
+step3 - assign each data point to the closest centroid -> forms K clusters (based on euclidean distances)
+step4 - compute and place new centroid of each cluster
+step5 - reassign each data point to the new closest centroid
+        if any reassignmnet took place go to step 4 otherwise go to finish
+        
+
+prob1 - we need to ensure it picks initial values properly => kmeans++
+prob2 - we need to find k value => elbow method analysis
+
+### 22) Hierarchical clustering
+Two types
+1 - agglomerative (botoom up approach)
+2 - divisive (up to bottom)
+#### Agglomerative HC:
+step1 - make each data point a single point cluster -> that forms N clusters
+step2 - Take the two closest data points and make them one cluster -> that forms N-1 clusters
+step3 - Take the two closest clusters and make them one cluster -> that forms N-2
+step4 - Repeat STEP3 until there is only one cluster
+euclidean distance sqrt[ (x2-x1)^2 + (y2-y1)^2 ]
+
+Distance between two clusters : we can find euclidean between below 4 ways
+opt1) closest points
+opt2)furthest points
+opt3)avg distance
+opt4)dist between centroids
+
+While forming one giant cluster by Aglomerative HC it stores in memory and creates a Dendogram
+
+#### How do dendograms work?
+euclidian distance on vertical axis & points on xaxis
+dissimilarity threshold - helps to cut down the vertical axis
+recommended take largest distance and consider threshold there
+
+
+
+
