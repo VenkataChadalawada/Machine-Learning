@@ -361,5 +361,8 @@ Upper Confidence Bound (UCB)
 Thompson Sampling
 
 #### 27 Upper confidence Bound
+
 ##### Multi Armed Bandit Problem
+
+##### 28 Thompson Sampling
 
