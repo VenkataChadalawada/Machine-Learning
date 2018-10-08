@@ -351,3 +351,15 @@ in this model we only have 'Support'
 - step 1: set a minimum support
 - step 2: Take all the transactions having higher support than minimum support
 - step 3: sort these subsets by decreasing support
+
+### PART 6 - REINFORCEMENT LEARNING
+Reinforcement Learning is a branch of Machine Learning, also called Online Learning. It is used to solve interacting problems where the data observed up to time t is considered to decide which action to take at time t + 1. It is also used for Artificial Intelligence when training machines to perform tasks such as walking. Desired outcomes provide the AI with reward, undesired with punishment. Machines learn through trial and error.
+
+In this part, you will understand and learn how to implement the following Reinforcement Learning models:
+
+Upper Confidence Bound (UCB)
+Thompson Sampling
+
+#### 27 Upper confidence Bound
+##### Multi Armed Bandit Problem
+
