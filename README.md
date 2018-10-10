@@ -378,3 +378,14 @@ In this part, you will understand and learn how to:
 Clean texts to prepare them for the Machine Learning models,
 Create a Bag of Words model,
 Apply Machine Learning models onto this Bag of Worlds model.
+
+##### Evaluating the performance of the model with the confusion matrix
+Evaluate the performance of each of these models. Try to beat the Accuracy obtained in the tutorial. But remember, Accuracy is not enough, so you should also look at other performance metrics like Precision (measuring exactness), Recall (measuring completeness) and the F1 Score (compromise between Precision and Recall). Please find below these metrics formulas (TP = # True Positives, TN = # True Negatives, FP = # False Positives, FN = # False Negatives):
+
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+Precision = TP / (TP + FP)
+
+Recall = TP / (TP + FN)
+
+F1 Score = 2 * Precision * Recall / (Precision + Recall)
