@@ -403,3 +403,26 @@ In this part, you will understand and learn how to implement the following Deep 
 
 Artificial Neural Networks for a Business Problem
 Convolutional Neural Networks for a Computer Vision task
+
+#### section 31 - Artificial Neural Networks
+Activation functions: There are several types of activation functions
+- threshold function
+more for discrete values
+- sigmoid function
+more useful for continuous values
+- Rectifier function
+
+perceptron - 
+how to test 
+  - by cross function
+  - C = 1/2(y`-y)^2  ; it should be minimum
+  
+##### Steps
+- step 1 : Randomly initialize the weights to small numbers near 0
+- step 2 : Input the first observation of your dataset in the input layer, each fature in one input node
+- step 3 : forward propogation: from left to right, the neurons are activated in a way that the impact of each neuron's activation is limited by  the weights. propogate the activations until getting the predicted result y
+- step 4 : compare the predicted result with the actual result, measure the generated error
+- step 5 :  Back propogation from right to left, the error is back propogated. Update the weights according to how much they are responsible for the error. Learning rate decides how much we update the weights
+- step 6 : repeat steps 1 to 5 and update the weights after each observation(Reinforcement learning). or Repeat steps 1-5 but update the weights only after a batch of observations.
+- step 7 : when the whole training set passed through the ANN that makes an epoch. redo more epochs
+
