@@ -426,3 +426,54 @@ how to test
 - step 6 : repeat steps 1 to 5 and update the weights after each observation(Reinforcement learning). or Repeat steps 1-5 but update the weights only after a batch of observations.
 - step 7 : when the whole training set passed through the ANN that makes an epoch. redo more epochs
 
+#### section 32 - Convolutional Neural Networks
+what are convolutional Neural Networks
+Step 1 : convolutional operation
+-  feature detector(kernel / filter) (it can be a 3X3 or any square matrix)will be put up on the input image
+- Each stride we compute how many matched up (1) gives convolved matrix or activation map or featured map
+- Input Image X Feature Detector = Feature Map
+- we create multiple feature maps with multiple filters
+- reLu as 
+Step 2 : pooling
+- Pooling => spatial invariance
+- feature map   ----max pooling----> pooled feature map
+- we are getting rid of 75% of data which is not feature related
+- other types of pooling => meanpooling(taking mean of the selected) , subsampling(average)
+Step3 - Flattening
+- makking it into a flat list of inputs from 2D to 1D
+Step4 - Full Connection
+- after flattening we pass them like a input layer which is again networked with fully connected layer(hidden layer) 
+Summary
+Softmax & cross- entropy
+- softmax => final output neurons will be applied on softmax function and that brings into 0 and 1 and their sum will be added upto 1
+- eg: if you get a dog class has 85% and cat has 45% how you see sum is not equal to 100 so  we needed a softmax
+
+- cross entropy => Similar to MSE (minmum Squared Error)  
+lets say we have two neural networks
+NN1
+------------------
+Dog^  cat^  Dog  Cat
+0.9   0.4   1     0
+0.1   0.9   0     1
+0.4   0.6   1     0
+
+NN2
+-----------------
+Dog^  cat^  Dog  Cat
+0.6   0.4   1     0
+0.3   0.7   0     1
+0.1   0.9   1     0
+
+Classification Error:
+- In both of these cases  1/3 it went wrong so 0.33 for both models but we know NN1 is outperforming NN2
+Mean Squared Error:
+- Take sum of squared errors  NN1 = 0.25 error rate and NN2 0.77 error rate
+Cross Entropy:
+- 0.38 error rate and NN2 1.06 error rate
+
+We could pick cross-entropy than mean squared error?
+- the jump from 1 million to 1000 
+- look for jeffry hinton videos on softmax
+
+finally CNN is almost ANN to add convolutional layers to preserve fatures in images there by we classify images
+
